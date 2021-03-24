@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title"><%= @post.title %></h5>
+    <p class="card-text"><%= @post.body %></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<p>
+  <strong>Сэтгэгдэл</strong>
+  <%= @post.comments.count %>
+</p>
+<br /><br />
+<%if @post.cover_picture.attached? %>
+  <%= image_tag @post.cover_picture, style: "width: 500px;"%>
+<%end%>
+<%= render partial: 'comments/form', locals: { comment: @comment } %>
+
+<h3>Comments</h3>
+<br /><br />
+<% @comments.each do |comment| %>
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-body">
+    <p class="card-text"><%= comment.body %></p>
+    <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
+  </div>
+</div>
+  <div>
+    <br>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-primary" %>
+<%= link_to 'Back', posts_path , class: "btn btn-outline-primary"%>

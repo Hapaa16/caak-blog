@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-light navbar-expand-lg bg-light"	id="myTab" role="tablist">
+  <div class="container-fluid">
+ 
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+      	<ul class="nav nav-tabs">
+  			<li class="nav-item">
+   				 <%= link_to 'Саак', {controller: 'home', action: 'index'}, class: "nav-link active"%>
+  			</li>
+          <li class="nav-item">
+           <%= link_to 'Блог бичих', new_post_path , class: "nav-link" %>
+        </li>
+ 			<li class="nav-item">
+    			 <%= link_to 'Блогууд', posts_path, class: "nav-link"%>
+  			</li>
+  			<li class="nav-item">
+    			 <%= link_to 'Шилдэг нийтлэлүүд', sorted_index_path, class: "nav-link" %>
+  			</li>
+
+		</ul>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
