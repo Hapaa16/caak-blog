@@ -4,7 +4,7 @@
   <div class="card-body">
     <h1 class="card-title"><%= @post.title %></h5>
     <p class="card-text"><%= @post.body %></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <p class="card-text"><%= @post.user.username%></p>
   </div>
 </div>
 <p>
@@ -21,6 +21,7 @@
 <br /><br />
 <% @comments.each do |comment| %>
 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <p>Bichsen: <%= comment.user.username %></p>  
   <div class="card-body">
     <p class="card-text"><%= comment.body %></p>
     <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>

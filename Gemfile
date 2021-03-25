@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
+gem 'devise'
+gem 'literate_randomizer'
+gem 'random-word', '~> 1.3'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'
 gem 'will_paginate', '~> 3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

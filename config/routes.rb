@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'banner_manage/index'
   post 'banner_manage/index'
   get 'home/index'

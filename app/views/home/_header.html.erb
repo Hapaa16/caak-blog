@@ -6,7 +6,7 @@
       <div class="navbar-nav">
       	<ul class="nav nav-tabs">
   			<li class="nav-item">
-   				 <%= link_to 'Саак', {controller: 'home', action: 'index'}, class: "nav-link active"%>
+   				 <%= link_to 'Саак', root_path, class: "nav-link active"%>
   			</li>
           <li class="nav-item">
            <%= link_to 'Блог бичих', new_post_path , class: "nav-link" %>
@@ -19,12 +19,18 @@
   			</li>
 
 		</ul>
-        
-        
-        
       </div>
     </div>
+      <% if current_user %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-item nav-link active", style: "color: black" %>
+      <% else %>
+
+        <%= link_to 'Sign up', new_user_registration_path, class: "nav-item nav-link active", style: "color: black" %>
+
+        <%= link_to 'Sign in', new_user_session_path, class: "nav-item nav-link active", style: "color: black"  %>
+      
   </div>
+<%end%>
 </nav>
 
 
