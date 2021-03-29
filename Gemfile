@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '3.0.0'
 gem 'devise'
 gem 'literate_randomizer'
 gem 'random-word', '~> 1.3'
