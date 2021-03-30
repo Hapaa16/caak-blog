@@ -1,0 +1,15 @@
+h1 Эрэмбэлсэн блог
+br/
+br/
+table.table.table-hover
+  thead
+    tr
+      th scope="col"  Блог
+      th scope="col"  Үзсэн
+  tbody
+    - @posts.each do |post|
+      tr
+        td= post.body
+        td= post.toololt
+.digg_pagination.d-flex.justify-content-center.mb-5
+  = will_paginate(@posts)

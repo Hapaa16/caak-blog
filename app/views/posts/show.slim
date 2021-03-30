@@ -1,0 +1,40 @@
+p#notice= notice
+= render partial: 'banner'
+.card
+  .card-body
+    h1.card-title
+      = @post.title
+    p.card-text= @post.body
+    p.card-text= @post.user.username
+    - pre_like = @post.likes.find {|like| like.user_id == current_user.id}
+    - if pre_like
+      = button_to 'Unlike', post_like_path(@post, pre_like), method: :delete
+    - else
+      = button_to 'Like', post_likes_path(@post), method: :post
+
+    p.card-text
+      = @post.likes.count 
+      = @post.likes.count == 1 ? 'Likes' : 'Like'
+p
+  strong Сэтгэгдэл
+  = @post.comments.count
+br/
+br/
+- if @post.cover_picture.attached?
+  = image_tag @post.cover_picture, style: "width: 500px;"
+= render partial: 'comments/form', locals: { comment: @comment }
+h3 Comments
+br/
+br/
+- @comments.each do |comment|
+  .card.text-white.bg-primary.mb-3 style=("max-width: 18rem;") 
+    p
+      | Bichsen: #{comment.user.username}
+
+    .card-body
+      p.card-text= comment.body
+      = link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+  div
+    br/
+= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-primary"
+= link_to 'Back', posts_path , class: "btn btn-outline-primary"

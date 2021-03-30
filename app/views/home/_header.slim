@@ -1,0 +1,22 @@
+nav#myTab.navbar.navbar-light.navbar-expand-lg.bg-light role="tablist" 
+  .container-fluid
+    #navbarNavAltMarkup.collapse.navbar-collapse
+      .navbar-nav
+        ul.nav.nav-tabs
+          li.nav-item
+            = link_to 'Саак', root_path, class: "nav-link active"
+          li.nav-item
+            = link_to 'Блог бичих', new_post_path , class: "nav-link"
+          li.nav-item
+            = link_to 'Блогууд', posts_path, class: "nav-link"
+          li.nav-item
+            = link_to 'Шилдэг нийтлэлүүд', sorted_index_path, class: "nav-link"
+    - if current_user
+      = link_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-item nav-link active", style: "color: black"
+    - else
+      = link_to 'Sign up', new_user_registration_path, class: "nav-item nav-link active", style: "color: black"
+      = link_to 'Sign in', new_user_session_path, class: "nav-item nav-link active", style: "color: black"
+#myTabContent.tab-content
+  #home.tab-pane.fade.show.active aria-labelledby="home-tab" role="tabpanel"  ...
+  #profile.tab-pane.fade aria-labelledby="profile-tab" role="tabpanel"  ...
+  #contact.tab-pane.fade aria-labelledby="contact-tab" role="tabpanel"  ...

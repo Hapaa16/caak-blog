@@ -1,0 +1,6 @@
+h1 text
+= form_with url: banner_manage_index_path do |form|
+  .form-group
+    = form.label :image
+    = form.file_field :image
+    = form.submit
