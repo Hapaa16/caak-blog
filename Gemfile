@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 gem 'devise'
+gem 'slim', '~> 4.1'
 gem 'literate_randomizer'
 gem 'random-word', '~> 1.3'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'

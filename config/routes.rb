@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'sorted/index'
   resources :comments
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
   get 'posts/sorted_posts'
   root 'home#index'
 

@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <% if(rand(2) == 1) %>
@@ -23,10 +24,10 @@
         <td><%= link_to 'Edit', edit_post_path(post), class: "btn btn-primary" %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you suree?' }, class: "btn btn-primary" %></td>
         <%end%>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
